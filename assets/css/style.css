@@ -1398,6 +1398,644 @@ header.site-header {
 }
 
 
+/* Contact Page Styles */
+.contact-hero {
+  padding: 2rem 0 1rem;
+}
+
+.contact-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+  margin: 0.8rem 0 1.2rem;
+  color: var(--fg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--fg), rgba(255, 255, 255, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-tagline {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-section {
+  padding: 0 0 3rem;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-form-wrapper {
+  background: linear-gradient(140deg, rgba(27, 45, 49, 0.98), rgba(15, 26, 28, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(181, 255, 82, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 70% 60% at 15% 15%, rgba(59, 228, 213, 0.1), transparent 75%),
+    radial-gradient(ellipse 60% 50% at 85% 85%, rgba(181, 255, 82, 0.08), transparent 75%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.contact-form-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--highlight), transparent);
+  opacity: 0.7;
+}
+
+.contact-form-header {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-form-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  color: var(--fg);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--fg), rgba(255, 255, 255, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-form-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  color: var(--fg);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.contact-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  color: var(--fg);
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 0 0 3px rgba(181, 255, 82, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-input::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+.contact-submit {
+  margin-top: 0.5rem;
+  width: 100%;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-submit svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s;
+}
+
+.contact-submit:hover svg {
+  transform: translate(4px, -4px);
+}
+
+.contact-info-wrapper {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+.contact-info-card {
+  background: linear-gradient(140deg, rgba(27, 45, 49, 0.98), rgba(15, 26, 28, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(181, 255, 82, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(59, 228, 213, 0.1), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(181, 255, 82, 0.08), transparent 70%);
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.contact-info-header {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info-header h3 {
+  font-size: 1.6rem;
+  color: var(--fg);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.contact-info-header p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact-info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-info-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(181, 255, 82, 0.2);
+  transform: translateX(4px);
+}
+
+.contact-info-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(181, 255, 82, 0.15), rgba(59, 228, 213, 0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.contact-info-item:hover .contact-info-icon {
+  background: linear-gradient(135deg, rgba(181, 255, 82, 0.25), rgba(59, 228, 213, 0.25));
+  transform: scale(1.1);
+}
+
+.contact-info-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent);
+}
+
+.contact-info-content {
+  flex: 1;
+}
+
+.contact-info-content h4 {
+  font-size: 1.1rem;
+  color: var(--fg);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.contact-info-content p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Books Page Styles */
+.books-hero {
+  padding: 2rem 0 1rem;
+}
+
+.books-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.books-hero-content h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  line-height: 1.3;
+  margin: 0.8rem 0 1rem;
+  color: var(--fg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--fg), rgba(255, 255, 255, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.books-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--muted);
+  font-weight: 400;
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.books-link {
+  color: var(--highlight);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+}
+
+.books-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.books-showcase-section {
+  padding: 0 0 2rem;
+}
+
+.book-showcase {
+  background: linear-gradient(140deg, rgba(27, 45, 49, 0.98), rgba(15, 26, 28, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(181, 255, 82, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.book-showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 70% 60% at 15% 15%, rgba(59, 228, 213, 0.1), transparent 75%),
+    radial-gradient(ellipse 60% 50% at 85% 85%, rgba(181, 255, 82, 0.08), transparent 75%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.book-showcase::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--highlight), transparent);
+  opacity: 0.7;
+}
+
+.book-image-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.book-image-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-image-container:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  border-color: rgba(181, 255, 82, 0.3);
+}
+
+.book-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+.book-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, var(--accent), var(--highlight));
+  color: #05100f;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(181, 255, 82, 0.3);
+}
+
+.book-details {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.book-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.book-publisher,
+.book-formats {
+  font-size: 0.9rem;
+  color: var(--highlight);
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  background: rgba(59, 228, 213, 0.1);
+  border: 1px solid rgba(59, 228, 213, 0.2);
+  border-radius: 999px;
+}
+
+.book-details h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--fg);
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--fg), rgba(255, 255, 255, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.book-subtitle-text {
+  font-size: 1.2rem;
+  color: var(--highlight);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.book-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.book-stat {
+  text-align: center;
+}
+
+.book-stat-number {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--accent), var(--highlight));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.book-stat-label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.book-description {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.book-description strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.books-preorder-section {
+  padding: 2rem 0 3rem;
+}
+
+.retailers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.retailer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.retailer-card {
+  background: linear-gradient(140deg, rgba(27, 45, 49, 0.95), rgba(15, 26, 28, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.retailer-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(59, 228, 213, 0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.retailer-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(181, 255, 82, 0.3);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(181, 255, 82, 0.15);
+}
+
+.retailer-card:hover::before {
+  opacity: 1;
+}
+
+.retailer-barcode {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.retailer-item:hover .retailer-barcode {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(181, 255, 82, 0.2);
+}
+
+.retailer-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.retailer-card:hover .retailer-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.retailer-card h3 {
+  font-size: 1.2rem;
+  color: var(--fg);
+  font-weight: 600;
+  margin: 0;
+}
+
+.retailer-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.retailer-arrow {
+  font-size: 1.5rem;
+  color: var(--highlight);
+  transition: transform 0.3s;
+  margin-top: 0.5rem;
+}
+
+.retailer-card:hover .retailer-arrow {
+  transform: translateX(6px);
+}
+
+.retailer-barcode .barcode-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.95);
+  transition: filter 0.3s;
+}
+
+.retailer-item:hover .retailer-barcode .barcode-image {
+  filter: brightness(1.05);
+}
+
 .timeline {
   display: grid;
   gap: 1.5rem;
@@ -1689,6 +2327,71 @@ header.site-header {
 
   .founder-card-image {
     min-height: 300px;
+  }
+
+  .contact-hero {
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  .contact-section {
+    padding: 0 0 2rem;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-info-wrapper {
+    position: static;
+  }
+
+  .contact-form-wrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-info-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .books-hero {
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  .books-showcase-section {
+    padding: 0 0 1.5rem;
+  }
+
+  .book-showcase {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .book-image-container {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .book-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .retailers-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .retailer-item {
+    gap: 0.8rem;
+  }
+
+  .retailer-card {
+    padding: 1.5rem;
+  }
+
+  .retailer-barcode {
+    padding: 0.8rem;
   }
 }
 

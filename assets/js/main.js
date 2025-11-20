@@ -1,3 +1,22 @@
+// Preloader functionality
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    // Prevent body scroll while preloader is visible
+    document.body.style.overflow = "hidden";
+    
+    // Add a small delay for smooth transition
+    setTimeout(() => {
+      preloader.classList.add("hidden");
+      // Restore body scroll and remove from DOM after animation completes
+      setTimeout(() => {
+        document.body.style.overflow = "";
+        preloader.remove();
+      }, 600);
+    }, 500);
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.querySelector("[data-year]");
   if (yearEl) {

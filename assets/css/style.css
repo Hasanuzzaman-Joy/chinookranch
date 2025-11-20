@@ -54,6 +54,10 @@ ul {
   min-height: 100vh;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .wrapper {
   width: min(92vw, var(--max-width));
   margin: 0 auto;
@@ -2497,7 +2501,8 @@ header.site-header {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: min(85vw, 400px);
     height: 100vh;
     background: linear-gradient(135deg, rgba(15, 26, 28, 0.98), rgba(19, 32, 36, 0.98));
@@ -2510,13 +2515,14 @@ header.site-header {
     justify-content: flex-start;
     padding: 5rem 2rem 2rem;
     gap: 0.5rem;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
     overflow-y: auto;
     z-index: 1000;
   }
 
   .nav-links.active {
-    right: 0;
+    transform: translateX(0);
   }
 
   .nav-links::before {
@@ -2550,7 +2556,14 @@ header.site-header {
     border-color: rgba(181, 255, 82, 0.4);
   }
 
-  .navbar .cta-btn {
+  .nav-links .nav-cta {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .navbar > .cta-btn {
     display: none;
   }
 
@@ -3043,5 +3056,10 @@ header.site-header {
   .nav-overlay.active {
     opacity: 1;
   }
+}
+
+/* Mobile CTA hidden by default on desktop */
+.nav-links .nav-cta {
+  display: none;
 }
 

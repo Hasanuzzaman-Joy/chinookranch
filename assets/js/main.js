@@ -5,7 +5,6 @@ window.addEventListener("load", () => {
     // Prevent body scroll while preloader is visible
     document.body.style.overflow = "hidden";
     
-    // Add a small delay for smooth transition
     setTimeout(() => {
       preloader.classList.add("hidden");
       // Restore body scroll and remove from DOM after animation completes
@@ -85,52 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (navOverlay) navOverlay.classList.remove("active");
         body.style.overflow = "";
       }
-    });
-  }
-
-  const form = document.querySelector("[data-booking-form]");
-  if (form) {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = Object.fromEntries(new FormData(form));
-
-      const requiredFilled = ["name", "email", "service", "date"].every(
-        (field) => data[field] && data[field].trim() !== ""
-      );
-
-      if (!requiredFilled) {
-        alert("Please complete all required fields.");
-        return;
-      }
-
-      form.reset();
-      alert(
-        `Thanks ${data.name.split(" ")[0]}! Our team will confirm your ${
-          data.service
-        } booking for ${data.date}.`
-      );
-    });
-  }
-
-  const contactForm = document.querySelector("[data-contact-form]");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = Object.fromEntries(new FormData(contactForm));
-
-      const requiredFilled = ["name", "email", "help"].every(
-        (field) => data[field] && data[field].trim() !== ""
-      );
-
-      if (!requiredFilled) {
-        alert("Please complete all required fields.");
-        return;
-      }
-
-      contactForm.reset();
-      alert(
-        `Thank you ${data.name.split(" ")[0]}! We've received your message and will get back to you soon.`
-      );
     });
   }
 });
